@@ -46,7 +46,7 @@ public class App {
         List<SuperMarket> superMarkets = new ArrayList<>();
 
         superMarkets.add(createSuperMarket("Conad", "via dei Conad"));
-        superMarkets.add(createSuperMarket("Despar", "via da Qui"));
+        superMarkets.add(createSuperMarket("Despar", "via dei  Despar"));
         superMarkets.add(createSuperMarket("Famila", "tricesimo"));
 
         App app = new App(shoppingCart, superMarkets);
@@ -94,6 +94,7 @@ public class App {
         app.printShoppingCart();
     }
 
+
     private void addToShoppingCart(String superMarketName, String productName, int quantity) {
         SuperMarket superMarket = getSuperMarketByName(superMarketName);
         Product product = superMarket.getProductByName(productName);
@@ -103,6 +104,8 @@ public class App {
 
     private static Department createHygieneDepartment() {
 
+        Map<String, Product> hygieneDepartment = new HashMap<>();
+
         Product cottonfioc = new Product("cottonfioc", 0.99, 1);
         Product dentifricio = new Product("dentifricio", 2.15, 2);
         Product cartaigienica = new Product("cartaigienica", 2.50, 3);
@@ -110,7 +113,6 @@ public class App {
         Product cremaviso = new Product("cremaviso", 10.00, 5);
         Product fazzoletti = new Product("fazzoletti", 2.00, 6);
 
-        Map<String, Product> hygieneDepartment = new HashMap<>();
 
         hygieneDepartment.put(cottonfioc.getName(), cottonfioc);
         hygieneDepartment.put(dentifricio.getName(), dentifricio);
